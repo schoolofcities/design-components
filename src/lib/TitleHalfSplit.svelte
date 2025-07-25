@@ -174,5 +174,11 @@
 		}
 	}
 
+	@media screen and (max-width: 600px) and (max-height: 900px) {
+		.container {
+			height: calc(100vh + 200px);
+		}
+	}
+
 
 </style>
