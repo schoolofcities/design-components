@@ -9,6 +9,8 @@
 	export let image = '';
 	export let imageOpacity = 1;
 	export let imageAltText = '';
+	// export let imageCaption = '';
+	// export let imageSource = '';
 	export let titleFontColour = 'var(--brandDarkBlue)';
 	export let subtitleFontColour = 'var(--brandDarkBlue)';
 	export let logoType = 'Black'; // 'Black', 'White', or 'None'
@@ -60,13 +62,13 @@
 
 <div class="subtitle-text-container">
 		
-		{#if divWidth <= 600}
+	{#if divWidth <= 600}
 
-			<h2 style="color: black;">{subtitle}</h2>
-			
-		{/if}
+		<h2 style="color: black;">{subtitle}</h2>
+		
+	{/if}
 
-	</div>
+</div>
 
 
 

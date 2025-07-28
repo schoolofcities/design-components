@@ -58,7 +58,7 @@
 
 	<!-- Full page title example -->
 
-	<TitleFullPage
+	<!-- <TitleFullPage
 		title="Fun Captivating Project Title"
 		subtitle="Maybe a slightly longer more detailed wordier project subtitle"
 		image="https://jamaps.github.io/photos/picimgs/halifax2_2024.jpg"
@@ -67,22 +67,24 @@
 		titleFontColour="var(--brandWhite)"
 		subtitleFontColour="var(--brandWhite)"
 		logoType="White"
-	/>
+	/> -->
 
 
 	<!-- Here is a half split title example: -->
 
-	<!-- <TitleHalfSplit
+	<TitleHalfSplit
 		title="Fun Captivating Project Title"
 		subtitle="Maybe a slightly longer more detailed wordier project subtitle that explains the project"
 		image="https://schoolofcities.github.io/eddit/_app/immutable/assets/wood-buffalo-title-img-2.CpYjt7SE.jpg"
 		imageAltText="A photo"
+		imageCaption="Wood Buffalo skyline."
+		imageSource="Wikimedia Commons."
 		titleFontColour="var(--brandWhite)"
 		titleBorderColour="var(--brandYellow)"
 		subtitleFontColour="var(--brandWhite)"
 		backgroundColour="var(--brandDarkBlue)"
 		logoStyle="Dark"
-	/> -->
+	/>
 
 	
 	<!-- Simple title example with logo and subtitle: -->

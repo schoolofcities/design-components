@@ -6,6 +6,8 @@
 	export let subtitle = '';
 	export let image = '';
 	export let imageAltText = '';
+	export let imageCaption = '';
+	export let imageSource = '';
 	export let titleFontColour = 'var(--brandDarkBlue)';
 	export let titleBorderColour = 'var(--brandDarkBlue)';
 	export let subtitleFontColour = 'var(--brandDarkBlue)';
@@ -34,13 +36,24 @@
 	</div>
 </div>
 
+
+{#if imageCaption || imageSource}
+
+	<p class="img-caption" >{@html imageCaption} <span id="image-source">{@html imageSource}</span></p>
+	
+{/if}
+
+<div class="spacer"></div>
+
+
+
 <style>
 	.container {
 		display: flex;
 		height: 100vh;
 		width: 100%;
 		border-bottom: solid 1px var(--brandGray);
-		margin-bottom: 70px;
+		margin-bottom: 0px;
 		z-index: 20;
 	}
 
@@ -177,6 +190,44 @@
 	@media screen and (max-width: 600px) and (max-height: 900px) {
 		.container {
 			height: calc(100vh + 200px);
+		}
+	}
+
+	p {
+		text-align: right;
+		padding-right: 3px;
+		margin: 0px;
+		box-sizing: border-box;
+		width: 100%;
+		font-family: OpenSansBold;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	.img-caption {
+		font-family: OpenSansBold;
+		font-weight: normal;
+		color: var(--brandGray70);
+		margin-top: 2px;
+		margin-bottom: 0px;
+		padding-top: 0px;
+	}
+
+	#image-source {
+		font-family: OpenSans;
+		font-weight: normal;
+		color: var(--brandGray50);
+	}
+
+	.spacer {
+		background-color: none;
+		height: 50px;
+	}
+
+	@media (max-width: 500px) {
+		p {
+			font-size: 10px;
 		}
 	}
 
