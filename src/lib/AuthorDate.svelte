@@ -58,6 +58,12 @@
 		font-weight: normal;
 	}
 
+	.author-date strong {
+		color: var(--brandGray80);
+		font-family: SourceSerifBold;
+		font-weight: normal;
+	}
+
 	.author-date #date {
 		font-family: SourceSerifBold;
 		font-size: 13px;

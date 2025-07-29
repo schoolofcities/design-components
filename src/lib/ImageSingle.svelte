@@ -8,9 +8,18 @@
 	export let maxWidth = '';
 	export let link = 'Yes'; // Yes or No open link in new tab
 
+	// adjust left-padding based on if image fits the full screen or not
+	let containerWidth = 0;
+	$: numericMaxWidth = parseInt(maxWidth); // remove "px"
+	$: paddingLeft = containerWidth < numericMaxWidth ? '20px' : '1px';
+
 </script>
 
-<div class="img-container" style="max-width: {maxWidth}">
+<div 
+	class="img-container" 
+	style="max-width: {maxWidth}"
+	bind:offsetWidth={containerWidth}
+	>
 	{#if link === 'Yes'}
 		<a href={imageURL} target="_blank">
 			<img src={imageURL} alt={altText} loading="lazy" />
@@ -18,7 +27,10 @@
 	{:else}
 		<img src={imageURL} alt={altText} loading="lazy" />
 	{/if}
-	<p class="img-caption" >{@html caption} &nbsp; <span id="image-source">{@html source}</span></p>
+	<p 
+		class="img-caption" 
+		style="padding-left: {paddingLeft}"
+	>{@html caption} <span id="image-source">{@html source}</span></p>
 </div>
 
 <style>
@@ -31,6 +43,7 @@
 		margin: 0 auto;
 		padding-top: 10px;
 		padding-bottom: 0px;
+		margin-bottom: 30px;
 	}
 
 	img {
