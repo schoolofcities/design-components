@@ -1,7 +1,7 @@
 
 # Design components
 
-Guidelines and building blocks for creating print and web-based maps, charts, infographics, data stories / story maps, and dashboards at the School of Cities.
+Guidelines and building blocks for creating print and web-based maps, charts, info-graphics, data stories / story maps, and dashboards at the School of Cities.
 
 If building a new web-based product, this repo can be duplicated to get started.
 
@@ -70,11 +70,11 @@ Key things to consider
 
 When designing graphics, charts, and maps for `.pdf` reports or other *print* formats follow the visual guidelines above, but with the following constraints
 
-- Width: 3.5 inches (half page) or 7 inches (full page).
+- Width: 3.4 inches (half page) or 6.8 inches (full page).
 
 - Max height: 8.5 inches. Feel free to adjust height to best fit the graphic and limit excess white space.
 
-- Select fonts that would be the same or pair well with those used in broader report layout design. Fallback to using TradeGothicBold for titles and OpenSans for all other text (e.g. axis labels, legend text, etc.) if layout design isn't set or ready.
+- Select fonts that would be the same or pair well with those used in broader report layout design. Fallback to using TradeGothicBold for titles and OpenSans for all other text (e.g. axis labels, legend text, etc.) if layout design isn't set or ready or want something standard to previous SofC work.
 
 - No fonts smaller than 8pt.
 
@@ -82,7 +82,7 @@ When designing graphics, charts, and maps for `.pdf` reports or other *print* fo
 
 - Note all data sources used to create the graphic, near the bottom in smaller font is usually best.
 
-- If designing multiple graphics for the same publication or series, use similar visual language across all graphics (e.g. same font type size and colour for city labels, same line width and colours for transit lines, etc.).
+- If designing multiple graphics for the same publication or series, use similar visual language across all graphics (e.g. same font type size and colour for city labels, same fonts for data sources, same line width and colours for transit lines, etc.).
 
 
 
@@ -210,7 +210,7 @@ Some tips:
 
 ### Scrollytelling
 
-- Copy over Scott's component to start
+- `ScrollyImage` - scrollytelling component that has frames of fading in/out background (an image) and foreground scrolling text or other html content if needed (e.g. other photos). Can adjust left-center-right position of both foreground and background, as well as sizes (widths and heights) of these two pieces.
 
 
 

@@ -131,7 +131,7 @@ main {
 	padding-top: 0px;
 }
 
-.text h1 {
+h1 {
 	font-family: TradeGothicBold;
 	font-weight: normal;
 	font-size: 40px;
@@ -141,7 +141,7 @@ main {
 	padding: 0px;
 }
 
-.text h2 {
+h2 {
 	text-align: left;
 	font-family: TradeGothicBold;
 	font-weight: normal;
@@ -151,7 +151,7 @@ main {
 	color: var(--brandBlack);
 }
 
-.text h3 {
+h3 {
 	text-align: left;
 	font-family: TradeGothicBold;
 	font-weight: normal;
@@ -161,7 +161,7 @@ main {
 	color: var(--brandBlack);
 }
 
-.text h4 {
+h4 {
 	text-align: left;
 	font-family: TradeGothicBold;
 	font-weight: normal;
@@ -169,7 +169,7 @@ main {
 	color: var(--brandBlack);
 }
 
-.text p {
+p {
 	font-family: SourceSerif;
 	font-weight: normal;
 	color: var(--brandGray90);

@@ -11,6 +11,26 @@
 	import GraphicSingle from '$lib/GraphicSingle.svelte';
 	import GraphicsMultiples from '$lib/GraphicMultiples.svelte';
 	import Footer from '$lib/Footer.svelte';
+
+	import ScrollyImages from "$lib/ScrollyImages.svelte";
+	const scrollyContent = [
+        {
+            image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/wood-buffalo-title-img-2.CpYjt7SE.jpg",
+            text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        },
+        {
+            image: "https://jamaps.github.io/photos/picimgs/halifax2_2024.jpg",
+            text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        },
+        {
+            image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg",
+            text:"", // empty text section to demonstrate transparent div
+        },
+        {
+            image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg",
+            text: "<h2 style='margin-top: 20px;'>Header</h2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+        },
+    ];
 	
 	import Footnote from '$lib/Footnote.svelte';
     import Footnotes from '$lib/Footnotes.svelte';
@@ -58,7 +78,7 @@
 
 	<!-- Full page title example -->
 
-	<!-- <TitleFullPage
+	<TitleFullPage
 		title="Fun Captivating Project Title"
 		subtitle="Maybe a slightly longer more detailed wordier project subtitle"
 		image="https://jamaps.github.io/photos/picimgs/halifax2_2024.jpg"
@@ -67,12 +87,12 @@
 		titleFontColour="var(--brandWhite)"
 		subtitleFontColour="var(--brandWhite)"
 		logoType="White"
-	/> -->
+	/>
 
 
 	<!-- Here is a half split title example: -->
 
-	<TitleHalfSplit
+	<!-- <TitleHalfSplit
 		title="Fun Captivating Project Title"
 		subtitle="Maybe a slightly longer more detailed wordier project subtitle that explains the project"
 		image="https://schoolofcities.github.io/eddit/_app/immutable/assets/wood-buffalo-title-img-2.CpYjt7SE.jpg"
@@ -84,7 +104,7 @@
 		subtitleFontColour="var(--brandWhite)"
 		backgroundColour="var(--brandDarkBlue)"
 		logoStyle="Dark"
-	/>
+	/> -->
 
 	
 	<!-- Simple title example with logo and subtitle: -->
@@ -115,26 +135,31 @@
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat lacus eu dolor dapibus sodales. Aenean venenatis metus id eleifend tincidunt. Nulla ut lacus et urna finibus bibendum sit amet et ante. Aliquam tristique, ex sed porttitor hendrerit, ex odio accumsan ex, eu maximus leo quam quis nulla. 
 		</p>
+
 		<p>
 			Cras tincidunt nisi non tempus suscipit. Nullam metus erat, ultrices vitae mauris commodo, placerat sollicitudin sem. In vitae dignissim eros. Phasellus porttitor orci nisl, vitae iaculis nulla pretium et. Fusce nec tortor erat. Vestibulum pretium nisl et ligula ultrices fringilla.<Footnote id={addFootnote(fns[0])} />
 		</p>
+
 		<p>
 			Vivamus non finibus erat. Ut quis mi at felis aliquam rhoncus eu eget augue. Nunc convallis, dui et congue suscipit, nisl sapien malesuada ligula, vitae luctus justo ligula finibus diam. Quisque aliquam et lacus vitae venenatis. Duis id vulputate augue, vel posuere ex. Nam fermentum consequat dolor, ac finibus justo finibus sit amet. Nam suscipit egestas tellus, malesuada dignissim neque dignissim sed.<Footnote id={addFootnote(fns[1])} />
 		</p>
+
 		<p>
 			Nunc vel massa turpis. Vivamus id odio ut nulla dignissim molestie. 
 		</p>
 
 	</div>
 
-	<ImageSingle
-		imageURL="https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg"
-		caption="Worcester, MA."
-		source="Wikimedia Commons."
-		altText=""
-		maxWidth="1080px"
+	<ScrollyImages
+		sections={scrollyContent}
+		imageAlign={"center"}
+		imageWidth={"100%"}
+		imageHeight={100}
+		textSectionMaxWidth={"720px"}
+		textSectionAlign={"left"}
+		fadeDuration={500}
 	/>
-
+	
 	<div class="text">
 
 		<p>
@@ -241,6 +266,14 @@
 		</div>
 
 	</div>
+
+	<ImageSingle
+		imageURL="https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg"
+		caption="Worcester, MA."
+		source="Wikimedia Commons."
+		altText=""
+		maxWidth="1080px"
+	/>
 
 	<div class="text">
 
