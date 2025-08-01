@@ -5,7 +5,7 @@
 	import { onMount, onDestroy } from "svelte";
 
 	export let imageAlign = "center";
-	export let imageWidth = 100;
+	export let imageWidth = "100%";
 	export let imageHeight = "100%";
 	export let textSectionAlign = "right";
 	export let textSectionMaxWidth = "500px";
@@ -25,7 +25,48 @@
 		},
 	];
 
-	$: topImageMargin = (100 - imageHeight) / 2;
+	// $: topImageMargin = 0;
+
+	// if ("%" or "dvh" or "vh" in imageHeight)
+
+	// 	topImageMargin = (100 - imageHeight) / 2;
+
+	// else ("px" in imageHeight)
+
+		// imgDivHeight = min(0 ,(window.height - imageHeight) / 2)
+
+	// $: topImageMargin = (100 - imageHeight) / 2;
+
+	$: console.log(imageHeight,windowHeight,topImageMargin);
+
+	let windowHeight = 0;
+	let imgDivHeight = 0;
+	let topImageMargin = "0px";
+
+	onMount(() => {
+		windowHeight = window.innerHeight;
+
+		const resizeHandler = () => {
+			windowHeight = window.innerHeight;
+		};
+		window.addEventListener('resize', resizeHandler);
+
+		return () => window.removeEventListener('resize', resizeHandler);
+	});
+
+	$: {
+		if (typeof imageHeight === 'string') {
+			if (imageHeight.includes('%') || imageHeight.includes('vh') || imageHeight.includes('dvh')) {
+				const num = parseFloat(imageHeight);
+				topImageMargin = `${(100 - num) / 2}dvh`;
+			} else if (imageHeight.includes('px')) {
+				const px = parseFloat(imageHeight);
+				imgDivHeight = Math.max(0, (windowHeight - px) / 2);
+				topImageMargin = `${imgDivHeight}px`;
+			}
+		}
+	}
+
 	
 	let container;
 	let currentIndex = 0;
@@ -66,14 +107,14 @@
 
 			{#if currentIndex === i}
 				<div class="image-container">
-				<img
-					class={imageAlign}
-					src={section.image}
-					alt={section.heading}
-					transition:fade={{ duration: fadeDuration }}
-					loading="lazy"
-					style="height: {imageHeight}dvh; width: {imageWidth}; top: {topImageMargin}dvh;"		
-				/>
+					<img
+						class={imageAlign}
+						src={section.image}
+						alt={section.heading}
+						transition:fade={{ duration: fadeDuration }}
+						loading="lazy"
+						style="max-height: {imageHeight}; max-width: {imageWidth}; top: {topImageMargin};"	
+					/>
 				</div>
 				
 			{/if}
@@ -105,8 +146,8 @@
 <style>
 	
 	.scrolly-wrapper {
-		border-top: solid 1px var(--brandGray);
-		border-bottom: solid 1px var(--brandGray);
+		/* border-top: solid 1px var(--brandGray);
+		border-bottom: solid 1px var(--brandGray); */
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -126,6 +167,8 @@
 	.sticky-image img {
 		position: absolute;
 		object-fit: cover;
+		height: 100%;
+		width: 100%;
 		border: 1px solid #ccc;
 	}
 

@@ -13,31 +13,50 @@
 	import Footer from '$lib/Footer.svelte';
 
 	import ScrollyImages from "$lib/ScrollyImages.svelte";
-	const scrollyContent = [
-        {
-            image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/wood-buffalo-title-img-2.CpYjt7SE.jpg",
-            text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
-        },
-        {
-            image: "https://jamaps.github.io/photos/picimgs/halifax2_2024.jpg",
-            text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
-        },
-        {
-            image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg",
-            text:"", // empty text section to demonstrate transparent div
-        },
-        {
-            image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg",
-            text: "<h2 style='margin-top: 20px;'>Header</h2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-        },
-    ];
+	const scrollyContentBig = [
+		{
+			image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/wood-buffalo-title-img-2.CpYjt7SE.jpg",
+			text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+		},
+		{
+			image: "https://jamaps.github.io/photos/picimgs/halifax2_2024.jpg",
+			text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+		},
+		{
+			image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg",
+			text:"", // empty text section to demonstrate transparent div
+		},
+		{
+			image: "https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg",
+			text: "<h2 style='margin-top: 20px;'>Header</h2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+		},
+	];
+
+	const scrollyContentSmall = [
+		{
+			image: "./examples/amroth-iso-lot.png",
+			text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+		},
+		{
+			image: "./examples/amroth-iso-bldg.png",
+			text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+		},
+		{
+			image: "./examples/wilson-iso-lot.svg",
+			text:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+		},
+		{
+			image: "./examples/wilson-iso-bldg.svg",
+			text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+		},
+	];
 	
 	import Footnote from '$lib/Footnote.svelte';
-    import Footnotes from '$lib/Footnotes.svelte';
-    import { createFootnoteStore } from '$lib/footnoteUtils';
+	import Footnotes from '$lib/Footnotes.svelte';
+	import { createFootnoteStore } from '$lib/footnoteUtils';
 
 	const footnoteStore = createFootnoteStore();
-    const { footnotes, addFootnote } = footnoteStore;
+	const { footnotes, addFootnote } = footnoteStore;
 
 	const fns = [
 		'Hello I am a footnote',
@@ -151,15 +170,42 @@
 	</div>
 
 	<ScrollyImages
-		sections={scrollyContent}
+		sections={scrollyContentBig}
 		imageAlign={"center"}
 		imageWidth={"100%"}
-		imageHeight={100}
+		imageHeight={"100dvh"}
 		textSectionMaxWidth={"720px"}
 		textSectionAlign={"left"}
 		fadeDuration={500}
 	/>
 	
+	<div class="text">
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat lacus eu dolor dapibus sodales. Aenean venenatis metus id eleifend tincidunt. Nulla ut lacus et urna finibus bibendum sit amet et ante. Aliquam tristique, ex sed porttitor hendrerit, ex odio accumsan ex, eu maximus leo quam quis nulla.<Footnote id={addFootnote(fns[2])} />
+		</p>
+		<p>
+			Cras tincidunt nisi non tempus suscipit. Nullam metus erat, ultrices vitae mauris commodo, placerat sollicitudin sem. In vitae dignissim eros. Phasellus porttitor orci nisl, vitae iaculis nulla pretium et. Fusce nec tortor erat. Vestibulum pretium nisl et ligula ultrices fringilla.<Footnote id={addFootnote(fns[3])} />
+		</p>
+		<p>
+			Vivamus non finibus erat. Ut quis mi at felis aliquam rhoncus eu eget augue. Nunc convallis, dui et congue suscipit, nisl sapien malesuada ligula, vitae luctus justo ligula finibus diam. Quisque aliquam et lacus vitae venenatis. Duis id vulputate augue, vel posuere ex. Nam fermentum consequat dolor, ac finibus justo finibus sit amet. Nam suscipit egestas tellus, malesuada dignissim neque dignissim sed.<Footnote id={addFootnote(fns[0])} />
+		</p>
+		<p>
+			Nunc vel massa turpis. Vivamus id odio ut nulla dignissim molestie. 
+		</p>
+
+	</div>
+
+	<ScrollyImages
+		sections={scrollyContentSmall}
+		imageAlign={"center"}
+		imageWidth={"540px"}
+		imageHeight={"540px"} 
+		textSectionMaxWidth={"540px"}
+		textSectionAlign={"right"}
+		fadeDuration={500}
+	/>
+
 	<div class="text">
 
 		<p>
@@ -277,9 +323,9 @@
 
 	<div class="text">
 
-        <Footnotes footnotes={footnotes} />
+		<Footnotes footnotes={footnotes} />
 		
-    </div>
+	</div>
 
 	<Footer />
 

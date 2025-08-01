@@ -16,7 +16,6 @@
 	export let logoType = 'Black'; // 'Black', 'White', or 'None'
 
 	let divWidth;
-	$: console.log(divWidth);
 
 	let Logo;
 	$: Logo = logoType === 'Black'
