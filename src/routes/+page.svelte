@@ -97,7 +97,7 @@
 
 	<!-- Full page title example -->
 
-	<TitleFullPage
+	<!-- <TitleFullPage
 		title="Fun Captivating Project Title"
 		subtitle="Maybe a slightly longer more detailed wordier project subtitle"
 		image="https://jamaps.github.io/photos/picimgs/halifax2_2024.jpg"
@@ -106,7 +106,7 @@
 		titleFontColour="var(--brandWhite)"
 		subtitleFontColour="var(--brandWhite)"
 		logoType="White"
-	/>
+	/> -->
 
 
 	<!-- Here is a half split title example: -->
@@ -318,7 +318,7 @@
 		caption="Worcester, MA."
 		source="Wikimedia Commons."
 		altText=""
-		maxWidth="1080px"
+		maxWidth="680px"
 	/>
 
 	<div class="text">

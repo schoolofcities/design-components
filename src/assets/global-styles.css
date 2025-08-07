@@ -109,14 +109,15 @@ body {
 	padding: 0px;
 	margin: 0px;
 	background-color: var(--brandWhite);
-	min-width: 360px;
+	min-width: calc(100% - 100dvw + 360px);
+	width: 100%;
 }
 
 main {
 	margin: 0 auto;
 	padding: 0px;
 	width: 100%;
-	min-width: 360px;
+	min-width: calc(100% - 100dvw + 360px);
 	max-width: 100%;
 	position: relative;
 }
@@ -131,7 +132,7 @@ main {
 	padding-top: 0px;
 }
 
-h1 {
+.text h1 {
 	font-family: TradeGothicBold;
 	font-weight: normal;
 	font-size: 40px;
@@ -141,7 +142,7 @@ h1 {
 	padding: 0px;
 }
 
-h2 {
+.text h2 {
 	text-align: left;
 	font-family: TradeGothicBold;
 	font-weight: normal;
@@ -151,17 +152,17 @@ h2 {
 	color: var(--brandBlack);
 }
 
-h3 {
+.text h3 {
 	text-align: left;
 	font-family: TradeGothicBold;
 	font-weight: normal;
 	margin-top: 30px;
 	margin-bottom: 0px;
-	font-size: 24px;
+	font-size: 25px;
 	color: var(--brandBlack);
 }
 
-h4 {
+.text h4 {
 	text-align: left;
 	font-family: TradeGothicBold;
 	font-weight: normal;
@@ -169,7 +170,7 @@ h4 {
 	color: var(--brandBlack);
 }
 
-p {
+.text p {
 	font-family: SourceSerif;
 	font-weight: normal;
 	color: var(--brandGray90);
@@ -214,7 +215,9 @@ a {
 	color: var(--brandBlack);
 	text-decoration: underline;
 	font-family: SourceSerif;
+	font-weight: normal;
 }
+
 
 a:hover {
 	color: var(--brandMedGreen);
@@ -322,4 +325,49 @@ a:hover {
 		font-size: 15px;
 		line-height: 23px;
 	}
+}
+
+
+.caption-container {
+	margin-top: 2px;
+	margin-bottom: 0px;
+	padding-top: 2px;
+	width: 100%;
+}
+
+.caption-container p {
+	font-family: OpenSansBold;
+	font-weight: normal;
+	color: var(--brandGray80);
+	font-size: 12px;
+	line-height: 18px;
+	text-align: left;
+	padding-left: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.caption-text a  {
+	font-family: OpenSansBold;
+	font-weight: normal;
+	color: var(--brandGray80);
+}
+.caption-text a:hover  {
+	color: var(--brandMedGreen);
+}
+
+.caption-source {
+	font-family: OpenSans;
+	font-weight: normal;
+	color: var(--brandGray60);
+}
+
+.caption-source a  {
+	font-family: OpenSans;
+	font-weight: normal;
+	color: var(--brandGray60);
+}
+.caption-source a:hover  {
+	color: var(--brandMedGreen);
 }
