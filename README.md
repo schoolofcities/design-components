@@ -16,7 +16,7 @@ This doc has 3 sections:
 Note that this repository and its design guidelines and components is a *living* project. As we continue to work on projects, we'll update this doc with additional advice, update existing web components as needed, as well as add new components if they have potential in being generalized for use in future work. 
 
 
-## Visualization design guidelines
+# 1. Visualization design guidelines
 
 
 ### Colours
@@ -78,7 +78,7 @@ Key things to consider
 
 
 
-## Print design constraints
+# 2. Print design constraints
 
 When designing graphics, charts, and maps for `.pdf` reports or other *print* formats follow the visual guidelines above, but with the following constraints
 
@@ -98,7 +98,7 @@ When designing graphics, charts, and maps for `.pdf` reports or other *print* fo
 
 
 
-## Web design components
+# 3. Web design components
 
 The following outlines the components / building blocks for building web-based visualizations, maps, data stories / story maps, dashboards, etc.
 
@@ -174,45 +174,49 @@ For loading photographs and other raster images (i.e. no selectable text or othe
 
 ### Static graphic components
 
-Workflow and component for creating *static* graphics, charts, and maps with selectable text. i.e. for graphics that don't require interactivity or animation, but have labels that we want users to be able to copy/paste as needed.
+Workflow and component for creating *static* graphics, charts, and maps with selectable text. i.e. for graphics that don't require interactivity, dynamic data, or animation, but have labels that we want users to be able to copy/paste as needed.
 
 - Create graphics in design software (e.g. Illustrator, Inkscape, etc) based on the visual design guidelines noted at the top of this page (e.g. colouring, labelling, etc.). Save as `.svg`
 
-- Graphics designed at three specific pixel width sizes: 1080px, 720px, and 360px. If you want a larger graphic, e.g. at 1080, you must include options for each of the smaller iterations so it can be viewed okay on smaller screens without odd size compression.
+- Graphics should be designed at three specific pixel width sizes: 1080px, 720px, and 360px. If you want a larger graphic, e.g. at 1080px, you must include options for each of the smaller iterations so it can be viewed okay on smaller screens without odd size compression. If you only want to show a smaller graphic, e.g. at 360px wide, do not need to make larger versions.
+
+Rules for all graphics:
 
 - 20px margins for most graphics
 
-- 24px TradeGothicBold black title, typically top-left corner aligned.
+- 24px TradeGothicBold black title, typically top-left corner aligned. i.e. 20px from top and 20px from left accounting for the margins.
 
 - 12px OpenSans plain for noting data source(s), typically gray but can adapt as needed, and typically at the bottom of the graphic.
 
-- OpenSans (Normal, Bold, Italic) for all other fonts, adapt as needed based on design needs of the graphic
+- OpenSans (Normal, Bold, Italic) for all other fonts, adapt based on design needs of the graphic
 
-- If your graphic has a embedded raster, make sure that the raster is at least twice the resolution as the graphic width (e.g. if designing for a 360px wide graphic, the raster layer should be crisp at 720px). This is for mobile view.
+- If the graphic has a embedded raster, make sure that the raster is at least twice the resolution as the graphic width (e.g. if designing for a 360px wide graphic, the raster layer should be crisp at 720px). This is for mobile view which up-samples pixels.
 
-- To convert, run `svg-conversion.py` with the design `.svg` as an input. Export to a subfolder in `/static` to then load into the component. This process flattens all non-text layers into a single raster to allow for faster uploading in most cases.
+- To convert to an optimized web view, run `svg-conversion.py` with the design `.svg` as an input. Export to a subfolder in `/static` to then load into the component. This process flattens all non-text layers into a single raster to allow for faster uploading in most cases.
+
+There are two components for loading these graphics.
 
 - `GraphicSingle` loads the output `.svg` depending on screen size (e.g. the 360px wide graphic on smaller screens)
 
 - `GraphicMultiple` loads multiple 360px wide graphics and orders them in a grid depending on screen size
 
-- Both of the above incorporate a type of lazy loading
+- Note that both of the above incorporate a type of lazy loading
 
 
 
 ### Custom charts and maps
 
-If the above is limiting, use D3, MapLibre, or whatever other JavaScript libraries to design any custom static, interactive, and/or animated maps and visualizations we want.
+If the above is limiting, use D3, MapLibre, or whatever other JavaScript libraries to design any custom static, dynamic, interactive, and/or animated maps and visualizations we want. Design each of these in its own component to then load onto a `+page.svelte`.
 
 Some tips:
 
-- Try to have svelte do most of the DOM work if needed, rather than things like `d3.select`. Check out this [post](https://v4.connorrothschild.com/post/svelte-and-d3) for details.
+- Try to have Svelte do most of the DOM work if needed, rather than things like `d3.select`. Check out this [post](https://v4.connorrothschild.com/post/svelte-and-d3) for details.
 
-- Make sure to load in `global-styles.css` for style / font consistency across all content.
+- Make sure to load in `global-styles.css` for style, font, etc. consistency across all content.
 
 - 20px margins for most graphics.
 
-- 24px TradeGothicBold black title, typically top-left corner aligned. Align with body paragraph text.
+- 24px TradeGothicBold black title, typically top-left corner aligned. Try to align with body paragraph text where possible
 
 - 12px OpenSans plain for data source, typically gray but can adapt as needed, typically at the bottom of the graphic.
 
@@ -249,7 +253,7 @@ To do! add a hover function, like Wikipedia
 
 
 
-### Other text components to create
+### Other text components to potentially create
 
 - Quotation big
 
@@ -257,4 +261,6 @@ To do! add a hover function, like Wikipedia
 
 - Big number
 
-- Password
+- Video options in titles
+
+- Video option for scrolly-telling
