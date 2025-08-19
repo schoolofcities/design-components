@@ -128,7 +128,7 @@
 	
 	<!-- Simple title example with logo and subtitle: -->
 
-	<!-- <Logo logoType="Blue" backgroundColor="var(--brandWhite)"/>
+	<Logo logoType="Blue" backgroundColor="var(--brandWhite)"/>
 
 	<ImageSingle
 		imageURL="https://jamaps.github.io/photos/picimgs/taipei1_2025.jpg"
@@ -142,7 +142,7 @@
 	<TitleStandard
 		title="Fun Captivating Project Title"
 		subtitle="Maybe a slightly longer more detailed wordier project subtitle "
-	/> -->
+	/>
 
 	<div class="text">
 
@@ -169,16 +169,34 @@
 
 	</div>
 
-	<ScrollyImages
-		sections={scrollyContentBig}
-		imageAlign={"center"}
-		imageWidth={"100%"}
-		imageHeight={"100dvh"}
-		textSectionMaxWidth={"720px"}
-		textSectionAlign={"left"}
-		fadeDuration={500}
+	<GraphicSingle
+		svg720="./examples/map-tree-redline-720.svg"
+		svg360="./examples/map-tree-redline-360.svg"
 	/>
 	
+	<div class="text">
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat lacus eu dolor dapibus sodales. Aenean venenatis metus id eleifend tincidunt. Nulla ut lacus et urna finibus bibendum sit amet et ante. Aliquam tristique, ex sed porttitor hendrerit, ex odio accumsan ex, eu maximus leo quam quis nulla.<Footnote id={addFootnote(fns[2])} />
+		</p>
+		<p>
+			Cras tincidunt nisi non tempus suscipit. Nullam metus erat, ultrices vitae mauris commodo, placerat sollicitudin sem. In vitae dignissim eros. Phasellus porttitor orci nisl, vitae iaculis nulla pretium et. Fusce nec tortor erat. Vestibulum pretium nisl et ligula ultrices fringilla.<Footnote id={addFootnote(fns[3])} />
+		</p>
+		<p>
+			Vivamus non finibus erat. Ut quis mi at felis aliquam rhoncus eu eget augue. Nunc convallis, dui et congue suscipit, nisl sapien malesuada ligula, vitae luctus justo ligula finibus diam. Quisque aliquam et lacus vitae venenatis. Duis id vulputate augue, vel posuere ex. Nam fermentum consequat dolor, ac finibus justo finibus sit amet. Nam suscipit egestas tellus, malesuada dignissim neque dignissim sed.<Footnote id={addFootnote(fns[0])} />
+		</p>
+		<p>
+			Nunc vel massa turpis. Vivamus id odio ut nulla dignissim molestie. 
+		</p>
+
+	</div>
+
+	<GraphicsMultiples
+		svgPaths={["./examples/map-tree-360.svg", "./examples/map-heat-360.svg", "./examples/map-asthma-360.svg"]}
+	/>
+
+	
+
 	<div class="text">
 
 		<p>
@@ -206,33 +224,16 @@
 		fadeDuration={500}
 	/>
 
-	<div class="text">
 
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat lacus eu dolor dapibus sodales. Aenean venenatis metus id eleifend tincidunt. Nulla ut lacus et urna finibus bibendum sit amet et ante. Aliquam tristique, ex sed porttitor hendrerit, ex odio accumsan ex, eu maximus leo quam quis nulla.<Footnote id={addFootnote(fns[2])} />
-		</p>
-		<p>
-			Cras tincidunt nisi non tempus suscipit. Nullam metus erat, ultrices vitae mauris commodo, placerat sollicitudin sem. In vitae dignissim eros. Phasellus porttitor orci nisl, vitae iaculis nulla pretium et. Fusce nec tortor erat. Vestibulum pretium nisl et ligula ultrices fringilla.<Footnote id={addFootnote(fns[3])} />
-		</p>
-		<p>
-			Vivamus non finibus erat. Ut quis mi at felis aliquam rhoncus eu eget augue. Nunc convallis, dui et congue suscipit, nisl sapien malesuada ligula, vitae luctus justo ligula finibus diam. Quisque aliquam et lacus vitae venenatis. Duis id vulputate augue, vel posuere ex. Nam fermentum consequat dolor, ac finibus justo finibus sit amet. Nam suscipit egestas tellus, malesuada dignissim neque dignissim sed.<Footnote id={addFootnote(fns[0])} />
-		</p>
-		<p>
-			Nunc vel massa turpis. Vivamus id odio ut nulla dignissim molestie. 
-		</p>
-
-	</div>
-
-	<GraphicSingle
-		svg720="./examples/map-tree-redline-720.svg"
-		svg360="./examples/map-tree-redline-360.svg"
-	/>
-
+	
 	<div class="text">
 
 		<p>
 			Fusce sed sem nulla. Praesent congue sapien pellentesque sodales fermentum. Pellentesque dapibus ultrices lacus consectetur laoreet. Integer imperdiet sed sapien sed pharetra. Praesent sodales nunc ut lorem venenatis laoreet vitae et neque. Etiam condimentum tincidunt dignissim. 
 		</p>
+
+		
+
 		<p>	
 			Praesent placerat purus vitae rhoncus auctor. Aliquam faucibus porta scelerisque. In bibendum ornare sagittis. Nam accumsan turpis sit amet elementum sollicitudin. Mauris auctor nec velit id iaculis. Proin venenatis nisl a iaculis dignissim. Nunc volutpat nulla at dolor mollis eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam commodo purus in risus placerat, sed vehicula enim viverra. 
 		</p>
@@ -260,8 +261,14 @@
 
 	</div>
 
-	<GraphicsMultiples
-		svgPaths={["./examples/map-tree-360.svg", "./examples/map-heat-360.svg", "./examples/map-asthma-360.svg"]}
+	<ScrollyImages
+		sections={scrollyContentBig}
+		imageAlign={"center"}
+		imageWidth={"100%"}
+		imageHeight={"100dvh"}
+		textSectionMaxWidth={"720px"}
+		textSectionAlign={"left"}
+		fadeDuration={500}
 	/>
 
 	<div class="text">
@@ -312,14 +319,6 @@
 		</div>
 
 	</div>
-
-	<ImageSingle
-		imageURL="https://schoolofcities.github.io/eddit/_app/immutable/assets/worcester-title.DcKdv5q4.jpg"
-		caption="Worcester, MA."
-		source="Wikimedia Commons."
-		altText=""
-		maxWidth="680px"
-	/>
 
 	<div class="text">
 

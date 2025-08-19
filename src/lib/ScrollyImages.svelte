@@ -146,8 +146,6 @@
 <style>
 	
 	.scrolly-wrapper {
-		/* border-top: solid 1px var(--brandGray);
-		border-bottom: solid 1px var(--brandGray); */
 		display: flex;
 		flex-direction: column;
 		position: relative;

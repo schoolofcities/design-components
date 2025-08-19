@@ -3,8 +3,17 @@
 
 Guidelines and building blocks for creating print and web-based maps, charts, info-graphics, data stories / story maps, and dashboards at the School of Cities.
 
-If building a new web-based product, this repo can be duplicated to get started.
+If building a new web-based product, this repo can be duplicated to get started to have base styles (fonts, colours, etc.) and components loaded.
 
+This doc has 3 sections:
+
+1. **Visualization design guidelines**: Overall rules and recommendations for designing individual maps, charts, and related graphics.
+
+2. **Print design guidelines**: Specific details and guidelines for when designing visualizations for *print* or `.pdf`
+
+3. **Web design components**: A slew of Svelte components and workflows for building web-pages that include data visualizations, maps, and related graphics. These can be used as building blocks when starting a new web-based project.
+
+Note that this repository and its design guidelines and components is a *living* project. As we continue to work on projects, we'll update this doc with additional advice, update existing web components as needed, as well as add new components if they have potential in being generalized for use in future work. 
 
 
 ## Visualization design guidelines
@@ -14,13 +23,13 @@ If building a new web-based product, this repo can be duplicated to get started.
 
 We use [UofT brand colours](https://brand.utoronto.ca/document/13#/colours/colours) form most graphics.
 
-Then as needed we often create gradients between these for graphics requiring colour ramps and scales
+Then as needed, we often create gradients between these for graphics requiring colour ramps and scales. Can parse out mid-points for if we have binned data (e.g. a choropleth map with 5 bins, use 20% marks along the gradients)
 
 In terms of accessibility...
 
 - Check if graphic is colourblind safe. Many software and tools have filters for this. [This is also a good tool](https://www.color-blindness.com/coblis-color-blindness-simulator/)
 
-- Check [contrast ratios](https://webaim.org/resources/contrastchecker/) of colours anytime text or graphic elements are overlaid onto each other. Low ratio, hard to read.
+- Check [contrast ratios](https://webaim.org/resources/contrastchecker/) of colours anytime text or graphic elements are overlaid onto each other. If there is a low ratio, hard to read, and try to adjust.
 
 
 
@@ -32,11 +41,13 @@ Here are the main font families we use:
 - Sans-Serif: `OpenSans` 
 - Serif: `SourceSerifPro`
 
-For charts and maps, use `OpenSans` for most labels and text, and `TradeGothicBold` for titles and subtitles
+For charts and maps, use `OpenSans` for most labels and text, `TradeGothicBold` for titles and subtitles. 
+
+We use `SourceSerifPro` for body text, paragraphs, etc.
 
 For maps, use italics to label natural features (water, mountains) and non-italic for human features (buildings, neighbourhoods, etc.). 
 
-Have a hierarchy of labels, e.g. smaller more faint labels for background layers or reference information, and bolder larger labels for key data points.
+For maps and charts, try to have a hierarchy of labels, e.g. smaller more faint labels for background layers or reference information, and bolder larger labels for key data points.
 
 Make sure to check contrast ratios of label colours compared to their background colours.
 
@@ -62,7 +73,8 @@ Key things to consider
 
 - Think about the visual balance of the graphic. Try to reduce white space.
 
-- Do research, searching, etc. to see how others have visualized similar data.
+- Do research, exploration, etc. to see how others have visualized similar data.
+
 
 
 
@@ -72,7 +84,7 @@ When designing graphics, charts, and maps for `.pdf` reports or other *print* fo
 
 - Width: 3.4 inches (half page) or 6.8 inches (full page).
 
-- Max height: 8.5 inches. Feel free to adjust height to best fit the graphic and limit excess white space.
+- Max height: 8.5 inches. Feel free to adjust height to best fit the graphic and limit excess white space (as long as it is less than the max)
 
 - Select fonts that would be the same or pair well with those used in broader report layout design. Fallback to using TradeGothicBold for titles and OpenSans for all other text (e.g. axis labels, legend text, etc.) if layout design isn't set or ready or want something standard to previous SofC work.
 
@@ -122,25 +134,27 @@ These are the following layout and design components included can be incorporate
 
 - Includes the following div classes for text blocks
 
-- - `text` main body text
+	- `text` main body text
 
-- - `callout` for callout boxes that are important written context but a bit separate from main flow of text
+	- `callout` for callout boxes that are important written context but a bit separate from main flow of text
 
-- - `details` smaller text for details, data, methods
+	- `details` smaller paragraph text for details, e.g. about data, methods, etc.
+
+	- `caption` small text meant to provide captions/author/data sources for individual graphic items (e.g. a photograph, chart, etc.). This is also used by the `Image` components noted below.
 
 
 
 ### Title components
 
-We have a couple title options:
+We have a few options for what a title / top of a page would look like
 
-- `TitleStandard` A simple title text with option for adding a subtitle.
+- `TitleStandard` A simple title with option for adding a subtitle.
 
 - `LogoTop` A simple component for placing a logo at the top the page. Use in conjunction with TitleStandard. 
 
-- `TitleHalfSplit` A 50/50 split title with an image. This splits depending on orientation. e.g. if landscape it splits left-right, if portrait it splits top-bottom. Includes a logo. TODO add video option
+- `TitleHalfSplit` A 50/50 split title with an image. This splits depending on orientation. e.g. if landscape it splits left-right, if portrait it splits top-bottom. Includes a logo. 
 
-- `TitleFullPage`, a full page image with an overaly title text. TODO add video option
+- `TitleFullPage`, a full page image with an overlay title text.
 
 - `AuthorDate` a simple component with author and date information to load below the title.
 
