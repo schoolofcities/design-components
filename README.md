@@ -154,6 +154,9 @@ We have a few options for what a title / top of a page would look like
 
 - `TitleHalfSplit` A 50/50 split title with an image. This splits depending on orientation. e.g. if landscape it splits left-right, if portrait it splits top-bottom. Includes a logo. 
 
+- `TitleHalfSplitVideo` A 50/50 split title with an video. This splits depending on orientation. e.g. if landscape it splits left-right, if portrait it splits top-bottom. Includes a logo.
+
+
 - `TitleFullPage`, a full page image with an overlay title text.
 
 - `AuthorDate` a simple component with author and date information to load below the title.
@@ -162,13 +165,13 @@ Of course we can design new titles, but try to keep the same title and subtitle 
 
 
 
-### Images
+### Images and videos
 
 For loading photographs and other raster images (i.e. no selectable text or other interactivity)
 
-- `SimpleImage` a simple component that lazy loads a raster imag (e.g. `.png`, `.jpg`, etc.) from a URL. Make sure to have a caption and state the source. Can specify the max-width of the image.
+- `ImageSingle` a simple component that lazy loads a raster imag (e.g. `.png`, `.jpg`, etc.) from a URL. Make sure to have a caption and state the source. Can specify the max-width of the image. Note that `.png` is larger file size. Try to use `.jpg` or `.webp`.
 
-- Note that `.png` is larger file size. Try to use `.jpg` or `.webp`.
+- `VideoSingle` a simple component for a video from a URL. Make sure to have a caption and state the source. Can specify the max-width of the image, playback speed, and if want to auto play or have video controls. Generally use `.mp4`.
 
 
 
