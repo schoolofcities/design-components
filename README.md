@@ -247,8 +247,6 @@ Tooling for footnotes and an associated reference list on a page.
 
 - `footnoteUtils.js` functions to run the above :)
 
-To do! add a hover function, like Wikipedia
-
 
 ### Password
 
