@@ -18,7 +18,7 @@
 		on:mouseenter={() => isHovered = true}
 		on:mouseleave={() => isHovered = false}
 	>
-		[{id[0]}]
+		<span style="margin-left: -4px;">&nbsp;[{id[0]}]</span>
 	</a>
 
 	{#if isHovered}
@@ -85,7 +85,6 @@
 		white-space: normal;
     	word-wrap: break-word;
     	overflow-wrap: break-word;
-		/* text-wrap: ; */
 	}
 
 	@media (max-width: 980px) {
