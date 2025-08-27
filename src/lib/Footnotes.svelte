@@ -13,11 +13,22 @@
 
         <div id={`footnote-${footnote.id}`} class="footnote-item">
 
-            <sup>[{footnote.id}]</sup>
+            <sup><a href={`#footnote-ref-${footnote.id}`} class="backlink" on:click|preventDefault={() => {
+                    const element = document.getElementById(`footnote-ref-${footnote.id}`);
+                    const yOffset = -100;
+                    if (element) {
+                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'auto' });
+                    }
+                }}>
+                    <b>[{footnote.id}]</b>
+                </a> </sup> 
 
             <p style="display:inline">{@html footnote.text}
 
-                <a href={`#footnote-ref-${footnote.id}`} class="backlink" on:click|preventDefault={() => {
+            </p>
+
+            <a href={`#footnote-ref-${footnote.id}`} class="backlink" on:click|preventDefault={() => {
                     const element = document.getElementById(`footnote-ref-${footnote.id}`);
                     const yOffset = -100;
                     if (element) {
@@ -27,8 +38,6 @@
                 }}>
                     ⮝
                 </a>
-
-            </p>
 
         </div>
 
@@ -61,7 +70,7 @@
     }
     
     .footnote-item {
-        padding-left: 21px;
+        padding-left: 32px;
         margin-bottom: 10px;
         position: relative;
     }
