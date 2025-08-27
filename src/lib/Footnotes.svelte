@@ -13,7 +13,7 @@
 
         <div id={`footnote-${footnote.id}`} class="footnote-item">
 
-            <sup>{footnote.id}</sup>
+            <sup>[{footnote.id}]</sup>
 
             <p style="display:inline">{@html footnote.text}
 
