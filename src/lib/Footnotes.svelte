@@ -25,7 +25,7 @@
                         window.scrollTo({ top: y, behavior: 'auto' });
                     }
                 }}>
-                    ↩
+                    ⮝
                 </a>
 
             </p>
@@ -87,7 +87,7 @@
         font-family: SourceSerif, serif;
         font-weight: normal;
         text-decoration: none;
-        color: var(--brandPink);
+        color: var(--brandMedGreen);
     }
 
     @media screen and (max-width: 600px) {

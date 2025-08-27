@@ -12,7 +12,7 @@ export function createFootnoteStore() {
         const id = footnotes.length + 1;
         const parsed = parseMarkdown(text);
         footnotes.push({ id, text: parsed });
-        return id;
+        return [id, parsed];
     }
     
     return {
