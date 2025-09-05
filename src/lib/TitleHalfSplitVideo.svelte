@@ -2,6 +2,8 @@
 	import "../assets/global-styles.css"
 	import logoLight from '../assets/sofc-uoft-logo-blue-colour.svg';
 	import logoDark from '../assets/sofc-uoft-logo-white-colour.svg';
+
+	import { onMount } from 'svelte';
 	
 	export let title = '';
 	export let subtitle = '';
@@ -9,11 +11,47 @@
 	export let videoAltText = '';
 	export let videoCaption = '';
 	export let videoSource = '';
+	export let videoStart = 0;
+	export let videoSpeed = 1;
 	export let titleFontColour = 'var(--brandDarkBlue)';
 	export let titleBorderColour = 'var(--brandDarkBlue)';
 	export let subtitleFontColour = 'var(--brandDarkBlue)';
 	export let backgroundColour = 'var(--brandWhite)';
 	export let logoStyle = 'Light'; // 'Light' or 'Dark' or 'None'
+
+	let videoEl;
+	let ready = false;
+
+	onMount(() => {
+		if (!videoEl) return;
+
+		videoEl.pause();
+
+		const startVideo = () => {
+			videoEl.currentTime = videoStart;
+			videoEl.playbackRate = videoSpeed;
+			videoEl.play().catch(err => console.warn("Autoplay prevented:", err));
+			ready = true; // mark as ready to show
+		};
+
+		if (videoEl.readyState >= 2) {
+			startVideo();
+		} else {
+			videoEl.addEventListener('canplay', startVideo, { once: true });
+		}
+
+		const loopFromStart = () => {
+			if (videoEl.currentTime >= videoEl.duration) {
+				videoEl.currentTime = videoStart;
+				videoEl.play();
+			}
+		};
+		videoEl.addEventListener('timeupdate', loopFromStart);
+
+		return () => {
+			videoEl.removeEventListener('timeupdate', loopFromStart);
+		};
+	});
 
 </script>
 
@@ -36,12 +74,14 @@
 
 	<div class="right">
 		<video
+			bind:this={videoEl}
 			src={video}
 			aria-label={videoAltText}
 			autoplay
 			muted
 			loop
 			playsinline
+			style="opacity: {ready ? 1 : 0}; transition: opacity 0.2s;"
 		></video>
 	</div>
 </div>
@@ -60,6 +100,7 @@
 		height: 100vh;
 		width: calc(100% - 0px);
 		border-bottom: solid 1px var(--brandGray50);
+		background-color: black;
 		margin-bottom: 0px;
 		z-index: 20;
 	}
@@ -104,6 +145,7 @@
 		align-items: center;
 		overflow: hidden;
 		z-index: inherit;
+		opacity: 0.9;
 	}
 
 	.right video {
