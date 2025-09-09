@@ -82,9 +82,24 @@ Key things to consider
 
 When designing graphics, charts, and maps for `.pdf` reports or other *print* formats follow the visual guidelines above, but with the following constraints
 
-- Width: 3.4 inches (half page) or 6.8 inches (full page).
+- For portrait layouts (i.e. most reports that we do)
 
-- Max height: 8.5 inches. Feel free to adjust height to best fit the graphic and limit excess white space (as long as it is less than the max)
+	- Width: 3.4 inches (half page) or 6.8 inches (full page).
+
+	- Max height: 8.5 inches. Feel free to adjust height to best fit the graphic and limit excess white space (as long as it is less than the max)
+
+- For gridded landscape layouts (e.g. LUC case studies). Design to fit in quarters, half, or full page space.
+
+	- Height: 6.8 inch (full) or 3.4 inch (half)
+
+	- Width: 9.3 inch (full) or 4.65 inch (half)
+
+- CRIs are pretty flexible since the layouts are more custom designed. Can be any size that best fits the graphic, but do not exceed the following
+
+	- Max width: 10 inch
+
+	- Max height: 7.8 inch
+
 
 - Select fonts that would be the same or pair well with those used in broader report layout design. Fallback to using TradeGothicBold for titles and OpenSans for all other text (e.g. axis labels, legend text, etc.) if layout design isn't set or ready or want something standard to previous SofC work.
 
