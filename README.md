@@ -280,3 +280,5 @@ Tooling for footnotes and an associated reference list on a page.
 - Video options in titles
 
 - Video option for scrolly-telling
+
+- Lists (ordered and unordered)
