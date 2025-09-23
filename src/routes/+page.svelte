@@ -74,7 +74,8 @@
 	<title>Design Components | School of Cities</title>
 
 	<meta name="description" content="Repository of design and web components for building data stories, visualizations, maps, and other custom web projects" />
-	<meta name="author" content="Jeff Allen">
+	<meta name="author" content="School of Cities">
+	<meta rel="canonical" href="https://schoolofcities.github.io/design-components/">
 
 	<meta property="og:title" content="Design Components" />
 	<meta property="og:description" content="Repository of design and web components for building data stories, visualizations, maps, and other custom web projects" />
@@ -88,6 +89,15 @@
 	<meta name="twitter:description" content="Repository of design and web components for building data stories, visualizations, maps, and other custom web projects" />
 	<meta name="twitter:site" content="https://schoolofcities.github.io/design-components/" />
 	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/design-components/main/static/web-card.png" /> 
+
+	<meta name="citation_title" content="Design Components">
+	<meta name="citation_author" content="Author Name 1">
+	<meta name="citation_author" content="Author Name 2">
+	<!-- <meta name="citation_author" content="Author Name 3"> -->
+	<meta name="citation_publication_date" content="2025/09/23">
+	<meta name="citation_journal_title" content="School of Cities">
+	<!-- <meta name="citation_pdf_url" content="https://schoolofcities.utoronto.ca/research-paper.pdf"> -->
+	<meta name="citation_abstract_html_url" content="https://schoolofcities.github.io/design-components/">
 
 </svelte:head>
 
