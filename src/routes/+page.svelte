@@ -145,7 +145,7 @@
 		caption="Taipei skyline."
 		source="Jeff Allen."
 		altText=""
-		maxWidth="680px"
+		maxWidth="1080px"
 	/>
 
 
