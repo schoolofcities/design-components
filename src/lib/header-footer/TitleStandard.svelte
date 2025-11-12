@@ -1,6 +1,6 @@
 <script>
 
-	import "../assets/global-styles.css";
+	import "$assets/global-styles.css";
 
 	export let title = '';
 	export let subtitle = '';

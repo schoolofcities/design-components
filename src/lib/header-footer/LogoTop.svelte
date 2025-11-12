@@ -1,10 +1,10 @@
 <script>
 
-	import "../assets/global-styles.css";
-	import logoBlueColour from '../assets/sofc-uoft-logo-blue-colour.svg';
-	import logoWhiteColour from '../assets/sofc-uoft-logo-white-colour.svg';
-	import logoBlack from '../assets/sofc-uoft-logo-black.svg';
-	import logoWhite from '../assets/sofc-uoft-logo-white.svg';
+	import "$assets/global-styles.css";
+	import logoBlueColour from '$assets/sofc-uoft-logo-blue-colour.svg';
+	import logoWhiteColour from '$assets/sofc-uoft-logo-white-colour.svg';
+	import logoBlack from '$assets/sofc-uoft-logo-black.svg';
+	import logoWhite from '$assets/sofc-uoft-logo-white.svg';
 
 	export let logoType = 'Blue'; // 'Blue', 'White', 'Black', 'WhiteOnly'
 	export let backgroundColor = 'var(--brandWhite)'; 

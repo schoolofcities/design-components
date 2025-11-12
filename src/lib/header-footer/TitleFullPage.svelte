@@ -1,8 +1,8 @@
 <script>
 
-	import "../assets/global-styles.css"
-	import LogoBlack from '../assets/sofc-uoft-logo-black.svg';
-	import LogoWhite from '../assets/sofc-uoft-logo-white.svg';
+	import "$assets/global-styles.css"
+	import LogoBlack from '$assets/sofc-uoft-logo-black.svg';
+	import LogoWhite from '$assets/sofc-uoft-logo-white.svg';
 
 	export let title = '';
 	export let subtitle = '';

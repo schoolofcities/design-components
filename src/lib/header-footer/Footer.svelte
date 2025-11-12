@@ -1,7 +1,7 @@
 <script>
 
-	import "../assets/global-styles.css"
-	import logos from '../assets/sofc-uoft-logo-white-colour.svg';
+	import "$assets/global-styles.css"
+	import logos from '$assets/sofc-uoft-logo-white-colour.svg';
 
 </script>
 

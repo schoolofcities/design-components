@@ -1,6 +1,6 @@
 <script>
 
-	import "../assets/global-styles.css";
+	import "$assets/global-styles.css";
 
 	export let authors = "";
 	export let graphics = ""

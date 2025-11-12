@@ -2,15 +2,15 @@
 
 	import '../assets/global-styles.css';
 
-	import Logo from '$lib/LogoTop.svelte';
-	import TitleFullPage from '$lib/TitleFullPage.svelte';
-	import TitleHalfSplit from '$lib/TitleHalfSplit.svelte';
-	import TitleStandard from '$lib/TitleStandard.svelte';
-	import AuthorDate from '$lib/AuthorDate.svelte';
-	import ImageSingle from '$lib/ImageSingle.svelte';
-	import GraphicSingle from '$lib/GraphicSingle.svelte';
-	import GraphicsMultiples from '$lib/GraphicMultiples.svelte';
-	import Footer from '$lib/Footer.svelte';
+	import Logo from '$lib/header-footer/LogoTop.svelte';
+	import TitleFullPage from '$lib/header-footer/TitleFullPage.svelte';
+	import TitleHalfSplit from '$lib/header-footer/TitleHalfSplit.svelte';
+	import TitleStandard from '$lib/header-footer/TitleStandard.svelte';
+	import AuthorDate from '$lib/header-footer/AuthorDate.svelte';
+	import ImageSingle from '$lib/images-videos/ImageSingle.svelte';
+	import GraphicSingle from '$lib/images-videos/GraphicSingle.svelte';
+	import GraphicsMultiples from '$lib/images-videos/GraphicMultiples.svelte';
+	import Footer from '$lib/header-footer/Footer.svelte';
 
 	import ScrollyImages from "$lib/ScrollyImages.svelte";
 	const scrollyContentBig = [
@@ -51,9 +51,9 @@
 		},
 	];
 	
-	import Footnote from '$lib/Footnote.svelte';
-	import Footnotes from '$lib/Footnotes.svelte';
-	import { createFootnoteStore } from '$lib/footnoteUtils';
+	import Footnote from '$lib/footnotes/Footnote.svelte';
+	import Footnotes from '$lib/footnotes/Footnotes.svelte';
+	import { createFootnoteStore } from '$lib/footnotes/footnoteUtils';
 
 	const footnoteStore = createFootnoteStore();
 	const { footnotes, addFootnote } = footnoteStore;
