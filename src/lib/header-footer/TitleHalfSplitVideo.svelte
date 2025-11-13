@@ -1,7 +1,7 @@
 <script>
-	import "../assets/global-styles.css"
-	import logoLight from '../assets/sofc-uoft-logo-blue-colour.svg';
-	import logoDark from '../assets/sofc-uoft-logo-white-colour.svg';
+	import "$assets/global-styles.css"
+	import logoLight from '$assets/sofc-uoft-logo-blue-colour.svg';
+	import logoDark from '$assets/sofc-uoft-logo-white-colour.svg';
 
 	import { onMount } from 'svelte';
 	
