@@ -1,5 +1,5 @@
 <script>
-	import "../assets/global-styles.css"
+	import "$assets/global-styles.css"
 
 	export let imageURL = '';
 	export let caption = '';
